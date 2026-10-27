@@ -1,5 +1,8 @@
 # nuxt-miniapp-telegram-max
 
+[![npm](https://img.shields.io/npm/v/nuxt-miniapp-telegram-max)](https://www.npmjs.com/package/nuxt-miniapp-telegram-max)
+[![license](https://img.shields.io/npm/l/nuxt-miniapp-telegram-max)](./LICENSE)
+
 Один Nuxt-проект — мини-приложение сразу в **Telegram** и в **MAX**, и обычный сайт
 в придачу. Один API для обоих мессенджеров, безопасный для SSR, и проверка
 initData на сервере.
@@ -26,7 +29,7 @@ initData на сервере.
   `<html>` встаёт класс `mini-app-telegram` или `mini-app-max` — разметка «только
   для мессенджера» показывается без мигания и без ошибок гидрации.
 - **Обрезанная initData.** Telegram на Android и десктопе отдаёт в
-  `tgWebApp.initData` огрызок вида `query_id`; модуль берёт данные из хеша запуска.
+  `Telegram.WebApp.initData` огрызок вида `query_id`; модуль берёт данные из хеша запуска.
 - **Поздний хеш на iOS.** Telegram на iOS иногда ставит параметры запуска уже после
   загрузки страницы — модуль их дожидается.
 - **Перезагрузка внутри приложения.** Роутер стирает хеш при первой навигации; после
@@ -51,6 +54,9 @@ initData на сервере.
 ```bash
 npx nuxt module add nuxt-miniapp-telegram-max
 ```
+
+Или вручную: `pnpm add nuxt-miniapp-telegram-max` (npm, yarn — так же) и в
+`nuxt.config.ts` — `modules: ['nuxt-miniapp-telegram-max']`. Нужен Nuxt 4.
 
 Больше ничего не нужно: откройте приложение кнопкой меню бота или ссылкой
 `startapp` — в Telegram и в MAX.
@@ -116,6 +122,14 @@ For a Telegram-only app with every feature of the platform, see
 ```bash
 npx nuxt module add nuxt-miniapp-telegram-max
 ```
+
+Or by hand: `pnpm add nuxt-miniapp-telegram-max` (npm, yarn alike) and
+`modules: ['nuxt-miniapp-telegram-max']` in `nuxt.config.ts`. Nuxt 4 is required.
+
+### Releasing
+
+A tag `v*` publishes that version to npm through `.github/workflows/release.yml`
+(trusted publishing, with provenance): `npm version patch --sign-git-tag && git push --follow-tags`.
 
 ### Server-rendered markup
 
