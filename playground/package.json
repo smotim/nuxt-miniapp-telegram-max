@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "nuxt-miniapp-telegram-max-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt-miniapp-telegram-max": "file:..",
+    "nuxt": "^4.6.2"
+  }
+}

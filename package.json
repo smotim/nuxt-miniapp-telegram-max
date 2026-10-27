@@ -1,0 +1,72 @@
+{
+  "name": "nuxt-miniapp-telegram-max",
+  "version": "0.1.0",
+  "description": "Telegram and MAX Mini Apps for Nuxt: one SSR-safe API for both messengers and the plain website, plus init data validation on the server",
+  "repository": "smotim/nuxt-miniapp-telegram-max",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "pnpm dev:prepare && nuxt dev playground",
+    "dev:build": "nuxt build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
+    "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^4.6.2",
+    "defu": "^6.1.7"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^3.4.2",
+    "@nuxt/eslint-config": "^1.17.0",
+    "@nuxt/module-builder": "^1.0.3",
+    "@nuxt/schema": "^4.6.2",
+    "@nuxt/test-utils": "^4.3.3",
+    "@types/node": "^24.0.0",
+    "changelogen": "^0.6.2",
+    "eslint": "^10.12.0",
+    "happy-dom": "^21.0.4",
+    "nuxt": "^4.6.2",
+    "playwright-core": "^1.64.1",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3",
+    "vue": "^3.5.44",
+    "vue-tsc": "^3.3.12"
+  },
+  "author": "Timofey",
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "telegram",
+    "telegram-mini-apps",
+    "max",
+    "max-messenger",
+    "mini-apps",
+    "webapp"
+  ],
+  "packageManager": "pnpm@11.0.9",
+  "engines": {
+    "node": ">=20"
+  }
+}
