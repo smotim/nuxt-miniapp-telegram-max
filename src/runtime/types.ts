@@ -171,7 +171,19 @@ interface ThemeParams {
   [key: string]: string | undefined
 }
 
-/** `window.Telegram.WebApp` from telegram-web-app.js, the part this module uses. */
+interface MainButtonLike {
+  show?(): void
+  hide?(): void
+  setParams?(params: { text?: string, color?: string, text_color?: string, is_visible?: boolean, is_active?: boolean }): void
+  onClick?(callback: () => void): void
+  offClick?(callback: () => void): void
+}
+
+/**
+ * `window.Telegram.WebApp` from telegram-web-app.js: what this module uses and
+ * the window chrome apps commonly set through `sdk.raw`. For the whole API,
+ * cast to the types of `@types/telegram-web-app`.
+ */
 export interface TelegramWebApp {
   initData: string
   initDataUnsafe?: { start_param?: string }
@@ -195,7 +207,12 @@ export interface TelegramWebApp {
   downloadFile?(params: { url: string, file_name: string }, callback?: (accepted: boolean) => void): void
   shareMessage?(messageId: string, callback?: (sent: boolean) => void): void
   requestWriteAccess?(callback?: (granted: boolean) => void): void
+  /** `bg_color`, `secondary_bg_color` or `#rrggbb`. */
+  setHeaderColor?(color: string): void
+  setBackgroundColor?(color: string): void
+  setBottomBarColor?(color: string): void
   BackButton?: BackButtonLike
+  MainButton?: MainButtonLike
   HapticFeedback?: HapticFeedbackLike
   [key: string]: unknown
 }

@@ -1,6 +1,5 @@
 import { computed, readonly } from 'vue'
-import { useRuntimeConfig } from '#imports'
-import { client, colorScheme, currentSdk, initData, launch, sdkMissing, startParam } from '../client/state'
+import { client, colorScheme, currentSdk, initData, initDataHeaderNames, launch, sdkMissing, startParam } from '../client/state'
 import type { MiniAppSdk } from '../types'
 
 /**
@@ -41,8 +40,7 @@ export function useMiniApp() {
     initDataHeaders(): Record<string, string> {
       const current = client.value
       if (current === 'web' || !initData.value) return {}
-      const names = useRuntimeConfig().public.miniApps.initDataHeaders
-      return { [names[current]]: initData.value }
+      return { [initDataHeaderNames[current]]: initData.value }
     },
 
     /** Hides the messenger's loader. Called for you unless `autoReady: false`. */

@@ -1,6 +1,6 @@
 import { shallowRef } from 'vue'
 import { parseInitData } from '../shared/initData'
-import type { ColorScheme, MiniAppClient, MiniAppInitData, MiniAppSdk } from '../types'
+import type { ColorScheme, MessengerClient, MiniAppClient, MiniAppInitData, MiniAppSdk } from '../types'
 import { createWebSdk } from './adapters/web'
 
 /*
@@ -20,6 +20,16 @@ export const initData = shallowRef('')
 export const launch = shallowRef<MiniAppInitData | null>(null)
 export const startParam = shallowRef<string | null>(null)
 export const sdkMissing = shallowRef(false)
+
+/**
+ * Header names for init data, copied from runtime config by the plugin:
+ * `initDataHeaders()` runs in handlers after `await`, where useRuntimeConfig()
+ * has no Nuxt instance to read from.
+ */
+export const initDataHeaderNames: Record<MessengerClient, string> = {
+  telegram: 'X-Telegram-Init-Data',
+  max: 'X-Max-Init-Data',
+}
 
 let stopColorScheme: () => void = () => {}
 

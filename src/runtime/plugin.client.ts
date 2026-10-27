@@ -17,7 +17,7 @@ import {
   waitForLaunchInitData,
 } from './client/launch'
 import { loadSdk } from './client/sdk'
-import { colorScheme, launch, sdkMissing, setMiniApp, startParam } from './client/state'
+import { colorScheme, initDataHeaderNames, launch, sdkMissing, setMiniApp, startParam } from './client/state'
 import { localSet } from './client/storage'
 
 /** How long to wait for init data in the hash when the SDK came without it (iOS sets it late). */
@@ -34,6 +34,7 @@ const plugin: Plugin = defineNuxtPlugin({
   name: 'nuxt-miniapp-telegram-max',
   async setup(nuxtApp) {
     const options = useRuntimeConfig().public.miniApps
+    Object.assign(initDataHeaderNames, options.initDataHeaders)
     const client = detectClient()
 
     if (client === 'web') {
