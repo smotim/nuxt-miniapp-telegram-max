@@ -126,11 +126,6 @@ npx nuxt module add nuxt-miniapp-telegram-max
 Or by hand: `pnpm add nuxt-miniapp-telegram-max` (npm, yarn alike) and
 `modules: ['nuxt-miniapp-telegram-max']` in `nuxt.config.ts`. Nuxt 4 is required.
 
-### Releasing
-
-A tag `v*` publishes that version to npm through `.github/workflows/release.yml`
-(trusted publishing, with provenance): `npm version patch --sign-git-tag && git push --follow-tags`.
-
 ### Server-rendered markup
 
 The server cannot know the client, so it always renders the website. Don't put
@@ -255,6 +250,9 @@ pnpm dev        # playground
 pnpm test       # unit + end-to-end (Chromium: pnpm exec playwright-core install chromium)
 pnpm lint
 ```
+
+A tag `v*` publishes that version to npm through `.github/workflows/release.yml`
+(trusted publishing, with provenance): `npm version patch --sign-git-tag && git push --follow-tags`.
 
 ## License
 
