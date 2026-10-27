@@ -1,6 +1,6 @@
 {
   "name": "nuxt-miniapp-telegram-max",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Telegram and MAX Mini Apps for Nuxt: one SSR-safe API for both messengers and the plain website, plus init data validation on the server",
   "repository": {
     "type": "git",
