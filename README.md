@@ -55,7 +55,8 @@ initData на сервере.
 npx nuxt module add nuxt-miniapp-telegram-max
 ```
 
-Или вручную: `pnpm add nuxt-miniapp-telegram-max` (npm, yarn — так же) и в
+Или вручную: поставить пакет (`pnpm add nuxt-miniapp-telegram-max`,
+`npm install nuxt-miniapp-telegram-max` или `yarn add nuxt-miniapp-telegram-max`) и в
 `nuxt.config.ts` — `modules: ['nuxt-miniapp-telegram-max']`. Нужен Nuxt 4.
 
 Больше ничего не нужно: откройте приложение кнопкой меню бота или ссылкой
@@ -123,8 +124,9 @@ For a Telegram-only app with every feature of the platform, see
 npx nuxt module add nuxt-miniapp-telegram-max
 ```
 
-Or by hand: `pnpm add nuxt-miniapp-telegram-max` (npm, yarn alike) and
-`modules: ['nuxt-miniapp-telegram-max']` in `nuxt.config.ts`. Nuxt 4 is required.
+Or by hand: install the package (`pnpm add nuxt-miniapp-telegram-max`,
+`npm install nuxt-miniapp-telegram-max` or `yarn add nuxt-miniapp-telegram-max`) and add
+`modules: ['nuxt-miniapp-telegram-max']` to `nuxt.config.ts`. Nuxt 4 is required.
 
 ### Server-rendered markup
 
