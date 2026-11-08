@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "nuxt-miniapp-telegram-max": "file:..",
-    "nuxt": "^4.6.2"
+    "nuxt": "^4.6.4"
   }
 }
