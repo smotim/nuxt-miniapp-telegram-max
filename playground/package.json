@@ -8,7 +8,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt-miniapp-telegram-max": "file:..",
+    "nuxt-miniapp-telegram-max": "workspace:*",
     "nuxt": "^4.6.4"
   }
 }

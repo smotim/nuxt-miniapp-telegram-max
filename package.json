@@ -43,12 +43,12 @@
     "defu": "^6.1.7"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^3.4.4",
+    "@nuxt/devtools": "^4.1.0",
     "@nuxt/eslint-config": "^1.17.0",
     "@nuxt/module-builder": "^1.0.3",
     "@nuxt/schema": "^4.6.4",
     "@nuxt/test-utils": "^4.3.4",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "changelogen": "^0.6.2",
     "eslint": "^10.14.0",
     "happy-dom": "^21.0.4",
@@ -70,7 +70,7 @@
     "mini-apps",
     "webapp"
   ],
-  "packageManager": "pnpm@11.28.9",
+  "packageManager": "pnpm@12.18.0",
   "engines": {
     "node": ">=20"
   }
